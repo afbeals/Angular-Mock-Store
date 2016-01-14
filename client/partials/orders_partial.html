@@ -1,0 +1,17 @@
+<div ng-controllers="ordersController">
+  <input style="float: right" type="text" ng-model="filter_customers" placeholder="Search">
+  <br>
+  <h1>Orders</h1>
+  <table class="table table-striped" >
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Date</th>
+    </tr>
+    <tr ng-repeat="customer in customers | filter:filter_customers | orderBy: 'name'">
+      <td>{{ customer.product }}</td>
+      <td>{{ customer.quantity }}</td>
+      <td>{{ customer.date }}</td>
+    </tr>
+  </table>
+</div>
